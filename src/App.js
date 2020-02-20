@@ -16,9 +16,10 @@ import ComicCard from "./components/ComicCard";
 import Footer from "./components/Footer";
 
 /* Containers */
+import Comic from "./containers/Comic";
 import Comics from "./containers/Comics";
 import Favorites from "./containers/Favorites";
-import Home from "./containers/Home";
+import Characters from "./containers/Characters";
 
 function App() {
   return (
@@ -26,13 +27,20 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Characters />
         </Route>
-        <Route path="comics">
+        <Route exact path="/characters/:id">
+          <Comic />
+        </Route>
+        <Route exact path="/characters">
+          <Characters />
+        </Route>
+
+        <Route path="/comics">
           <Comics />
         </Route>
         <Route>
-          <Favorites path="favorites" />
+          <Favorites path="/favorites" />
         </Route>
       </Switch>
       <Footer />

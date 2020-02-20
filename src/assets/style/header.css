@@ -1,8 +1,18 @@
 .header {
   width: 100vw;
-  height: 100px;
+  height: 150px;
   background-color: blue;
+  display: flex;
 }
 .header img {
   height: 75px;
+}
+nav {
+  display: flex;
+}
+nav div {
+  margin: 30px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
 }

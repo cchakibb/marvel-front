@@ -2,17 +2,20 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const Comics = () => {
+const Comic = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
+  console.log(id);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://marvel-back-chakib.herokuapp.com/comics/"
+        `https://marvel-back-chakib.herokuapp.com/comic/${id}`
       );
       setData(response.data);
+      console.log(response.data);
+
       setIsLoading(false);
     };
     fetchData();
@@ -49,4 +52,4 @@ const Comics = () => {
   );
 };
 
-export default Comics;
+export default Comic;
